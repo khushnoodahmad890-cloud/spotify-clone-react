@@ -6,6 +6,16 @@ const authApi = axios.create({
   baseURL: API,
 });
 
+authApi.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
+
 export default authApi;
 
 export type LoginData = {
@@ -19,12 +29,12 @@ export type RegisterData = {
   password: string;
 };
 
-export const login = async (
-  data: LoginData
-) => {
-  const res = await authApi.post(
-    "/login",
-    data
+export const login = async (data: LoginData) => {
+  const res = await authApi.post("/login", data);
+
+  localStorage.setItem(
+    "token",
+    res.data.token
   );
 
   return res.data;
