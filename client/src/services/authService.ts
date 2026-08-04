@@ -1,9 +1,12 @@
 import axios from "axios";
 
 const API = `${import.meta.env.VITE_API_URL}/api/users`;
+
 const authApi = axios.create({
   baseURL: API,
 });
+
+export default authApi;
 
 export type LoginData = {
   email: string;
