@@ -206,7 +206,7 @@ JWT_SECRET=
 **Khushnood Ahmad**
 
 - GitHub: https://github.com/khushnoodahmad890-cloud
-- LinkedIn: https://www.linkedin.com/in/khushnood-ahmad/
+- LinkedIn: https://www.linkedin.com/in/mkhushnoodahmad/
 - Email: khushnoodahmad890@gmail.com
 
 ---
